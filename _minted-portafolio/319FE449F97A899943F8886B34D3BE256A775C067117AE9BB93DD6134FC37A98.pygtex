@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{Lotka\PYGZus{}Volterra}\PYG{p}{(}\PYG{n}{P0}\PYG{p}{,}\PYG{n}{D0}\PYG{p}{,}\PYG{n}{mu}\PYG{p}{,}\PYG{n}{tmax}\PYG{p}{,}\PYG{n}{h}\PYG{p}{):}
+    \PYG{n}{t}\PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{tmax}\PYG{p}{,}\PYG{n}{h}\PYG{p}{)}
+    \PYG{n}{P}\PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{t}\PYG{p}{))}
+    \PYG{n}{D}\PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{t}\PYG{p}{))}
+    \PYG{n}{P}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{=}\PYG{n}{P0}
+    \PYG{n}{D}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{=}\PYG{n}{D0}
+    \PYG{k}{for} \PYG{n}{n} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{):}
+        \PYG{n}{P}\PYG{p}{[}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{=} \PYG{n}{P}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]} \PYG{o}{+} \PYG{n}{h} \PYG{o}{*} \PYG{n}{P}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]} \PYG{o}{*} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}} \PYG{n}{D}\PYG{p}{[}\PYG{n}{n}\PYG{p}{])}
+        \PYG{n}{D}\PYG{p}{[}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{=} \PYG{n}{D}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]} \PYG{o}{+} \PYG{n}{h} \PYG{o}{*} \PYG{n}{mu} \PYG{o}{*} \PYG{n}{D}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]} \PYG{o}{*} \PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{t}\PYG{p}{,} \PYG{n}{P}\PYG{p}{,} \PYG{n}{D}
+\end{Verbatim}

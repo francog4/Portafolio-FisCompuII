@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{limites} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{)}
+
+\PYG{n}{integ} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{limites}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{:}
+    \PYG{n}{integ} \PYG{o}{=} \PYG{n}{integ} \PYG{o}{+} \PYG{n}{midpoint\PYGZus{}simple}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{limites}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{limites}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{])}
+\end{Verbatim}

@@ -1,0 +1,168 @@
+\documentclass[../portafolio.tex]{subfiles}
+
+% Solo agregue paquetes en el preámbulo de ../portafolio.tex
+
+\begin{document}
+
+
+\section{Integración numérica básica}  
+
+\hfill \textbf{Fecha de la actividad:} 02 de septiembre de 2022
+
+\medskip
+
+%--------------------------------------------------------------------------
+
+\subsection{Objetivo de la clase}
+La finalidad de este laboratorio fue aprender a resolver integrales numéricamente con la regla del punto medio y para ello se tuvo que recurrir a las series de Taylor.
+
+En este laboratorio trabajé junto a Jeremías Martínez, Mauricio Bastías y Eduardo Escudero.
+
+%---------------------------------------------------------------------------
+
+\subsection{Desarrollo del Laboratorio}
+
+Se partió demostrando la regla del punto medio \ref{reglapm}.
+
+\begin{equation}
+    \int _a ^b f(x)dx = hf\left(\frac{a+b}{2}\right)+O(h^3) \label{reglapm}.
+\end{equation}
+
+ Para ello se consideró una expansión  en series de Taylor de $f(x)$, donde $c=\frac{(a+b)}{2}$:
+
+\begin{align}
+   f(x)  &= f(c) + f'(c) (x-c) + f''(x)\frac{(x-c)^2}{2}+.\ .\ . \notag \\
+     &= f(c) + f'(c) (x-c) + f''(\xi)\frac{(x-c)^2}{2} \label{xi_int}
+\end{align}
+
+En la ecuación \ref{xi_int} se define $\xi$, este es un valor que por el teorema del valor medio hace que la expansión en series sea exacta.
+
+Luego, integrando en ambos lados:
+
+\begin{align}
+    \int_a ^b f(x) dx &=  \int_a ^bf(c)dx + \int_a ^bf'(c) (x-c)dx + \int_a ^bf''(\xi)\frac{(x-c)^2}{2}dx \label{intref1}\\
+        &= f(c)(b-a) + f'(c)\left[\frac{x^2}{2} - cx\right]_a ^b + O(h^3) \label{intref2}
+\end{align}
+
+De la ecuación \ref{intref1} a la ecuación \ref{intref2} la integral $\int_a ^bf''(\xi)\frac{(x-c)^2}{2}dx$ se iguala a $ O(h^3)$ la cual indica el grado del error, ya que implícitamente en la integral se encuentra un $h^2$ y al momento de integrar esta quedará elevado al cubo. Siguiendo con el cálculo:
+
+\begin{equation*}
+      \int_a ^b f(x) dx  = f(c)(b-a) + f'(c)\left(\frac{b^2}{2}-cb-\frac{a^2}{2}+ca\right)+O(h^3),
+\end{equation*}
+
+Finalmente, reemplazando $h=(b-a)$ y $c$:
+
+\begin{align}
+    \int_a ^b f(x) dx &=  f(c)(b-a) + f'(c) (0) + O(h^3) \notag \\
+         &=  hf\left(\frac{a+b}{2}\right) +O(h^3). \label{ptomedio_int}
+\end{align}
+Así, la regla del punto medio queda demostrada, donde $O(h^3)$ es el error cometido al calcular la derivada y el $h^3$ indica que el error es de tercer orden, este se obtiene al integrar $\int_a ^bf''(\xi)\frac{(x-c)^2}{2}dx$.
+
+\vspace{2mm}
+
+Luego, usando la ecuación \ref{ptomedio_int} anteriormente demostrada se calculó $I$:
+
+\begin{align*}
+    I &= \int_0 ^3 (x-1) e^x dx \\
+\end{align*}
+
+Con $f(x)=(x-1)e^x$ se tiene:
+
+\begin{align}
+    I &=\frac{3}{2}e^\frac{3}{2} \notag\\
+    &\approx 6,722 \label{solnum}
+\end{align}
+
+Por otra parte calculando la integral $I$ de forma analítica, se tiene:
+
+\begin{align}
+    I &= \int_0 ^3 (x-1) e^x dx \notag \\
+    &= \left[ (x-1) e^x \right]_0 ^3 - \int_0 ^3 e^xdx \notag \\
+    &= e^3 + 2 \notag \\
+    &\approx 22,085 \label{solan}
+\end{align}
+
+En resumen, vemos que el resultado de la ecuación \ref{solnum} obtenida usando la regla del punto medio es $I\approx 6,722$,
+mientras que resolviendo la integral analíticamente en la ecuación \ref{solan} se obtuvo $I \approx 22,085 $, por lo que existe un error claro al usar el método del punto medio. Error que ocurre debido a que el intervalo que ocupan los límites de integración es muy grande.
+
+
+\vspace{5mm}
+
+\begin{listing}
+
+
+    \begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+bgcolor=LightGray,
+fontsize=\footnotesize,
+linenos
+]
+{python}
+def f(x):
+    return (x-1)*np.exp(x)
+
+def midpoint_simple(f,a,b):
+    return (b-a) * f((a+b)*0.5)
+
+print(midpoint_simple(f, 0, 3))
+    \end{minted}
+\caption{Fragmento de código donde se define una función y su integral a través de la regla del punto medio}
+\label{func_mps}
+\end{listing}
+
+En la primera linea del código \ref{func_mps} se definió una función $f$, en la cuarta linea se definió \texttt{midpoint\_simple(f,a,b)} que calculaba la integral de $f$ con límites de integración $a$ y $b$ con la regla del
+punto medio. Luego se imprimió \texttt{midpoint\_simple(f,0,3)} dando como resultado aproximadamente $6.77$.
+
+\vspace{5mm}
+Seguidamente se evaluó la integral de la siguiente forma:
+
+\begin{equation*}
+     \int _0 ^3 f(x)dx = \int _0 ^{x_1} f(x)dx + \int_{x_1} ^{x_2} f(x)dx  + \cdot \cdot \cdot +\int_{x_N} ^3 f(x)dx,
+\end{equation*}
+
+donde $0<x_1 <x_2< ...<x_N<3$, con 100 intervalos. Para ello se desarrolló el código \ref{rinteg}.
+
+\vspace{5mm}
+
+\begin{listing}
+
+    \begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+bgcolor=LightGray,
+fontsize=\footnotesize,
+linenos
+]
+{python}
+limites = np.linspace(0,3,100)
+
+integ = 0
+
+for i in range( len(limites)-1) :
+    integ = integ + midpoint_simple(f, limites[i], limites[i+1])
+    \end{minted}
+    
+\caption{Mejora del código \ref{func_mps} al implementar el ciclo \texttt{for}. }
+\label{rinteg}
+\end{listing}
+
+En la primera línea de \ref{rinteg} se creó un array con 100 elementos con el fin de evaluar la integral como la suma de 100 integrales, luego se definió \texttt{integ} para que cuando se ejecutara el ciclo \texttt{for} se sumaran todas las integrales de limites de integración \texttt{limites[i]} y \texttt{limites[i+1]}. Finalmente se ejecutó el programa, notando que el valor de \texttt{integ} fue aproximadamente $22.083$ que al comparar con la ecuación \ref{solan}  se observa el mismo resultado.
+
+%-------------------------------------------------------------------------------------------------
+
+\subsection{Conclusiones}
+
+Este laboratorio se comenzó haciendo la demostración de la regla del punto medio, para luego ocuparla calculando la integral de $f(x)= (x-1)e^x$ y comparar su resultado con la misma integral resuelta analíticamente. Al comparar ambos resultados se observó que la regla del punto medio fallaba. Luego de separar los límites de integración en varios intervalos muy pequeños se calculó la integral, pero ahora como la suma de varias integrales con intervalos de límites de integración más pequeños, de este modo se obtuvo un resultado mucho más exacto. Lo anterior ocurría debido a que este método falla cuando el intervalo que encierran los límites de integración es muy grande.
+
+\vspace{2mm}
+En esta actividad aprendí a utilizar y a programar la regla del punto medio para calcular integrales. También aprendí que al momento hacer la expansión en series de Taylor e integrar, el exponente de $h$ obtenido indica el orden del error y que mientras mayor sea el orden menor sera el error cometido al calcular la integral siempre y cuando $h$ sea menor a $1$.
+
+\vspace{2mm}
+Para esta actividad no tengo preguntas y tampoco consejos para mejorarlo, pues pienso que este laboratorio fue enseñado y desarrollado correctamente. 
+
+\end{document}

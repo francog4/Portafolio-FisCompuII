@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{x}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{N}\PYG{p}{))}
+\PYG{n}{y}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{N}\PYG{p}{))}
+
+\PYG{n}{mx}\PYG{o}{=\PYGZhy{}}\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{N}\PYG{p}{))}
+\PYG{n}{my}\PYG{o}{=\PYGZhy{}}\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{N}\PYG{p}{))}
+
+\PYG{n}{xx}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{concatenate}\PYG{p}{(} \PYG{p}{[} \PYG{n}{mx}\PYG{p}{,}\PYG{n}{x}\PYG{p}{,}\PYG{n}{mx}\PYG{p}{,}\PYG{n}{x}\PYG{p}{]} \PYG{p}{)} \PYG{o}{/}\PYG{l+m+mi}{2}
+\PYG{n}{yy}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{concatenate}\PYG{p}{(} \PYG{p}{[} \PYG{n}{my}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{my}\PYG{p}{]} \PYG{p}{)} \PYG{o}{/}\PYG{l+m+mi}{2}
+\end{Verbatim}

@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{n}{beta} \PYG{o+ow}{in} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mf}{0.6}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{p}{):}
+    \PYG{n}{a}\PYG{o}{=}\PYG{l+m+mf}{0.5}
+    \PYG{n}{b}\PYG{o}{=}\PYG{l+m+mf}{1.2}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{20}\PYG{p}{):}
+        \PYG{n}{c}\PYG{o}{=} \PYG{l+m+mf}{0.5}\PYG{o}{*}\PYG{p}{(}\PYG{n}{a}\PYG{o}{+}\PYG{n}{b}\PYG{p}{)}
+        \PYG{n}{condicion} \PYG{o}{=} \PYG{n}{du}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{a}\PYG{p}{,}\PYG{n}{h}\PYG{p}{)}\PYG{o}{*}\PYG{n}{du}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{c}\PYG{p}{,}\PYG{n}{h}\PYG{p}{)}
+
+        \PYG{k}{if} \PYG{n}{condicion}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{n}{b}\PYG{o}{=}\PYG{n}{c}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{n}{a}\PYG{o}{=}\PYG{n}{c}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{c}\PYG{p}{,}\PYG{n}{du}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{c}\PYG{p}{,}\PYG{n}{h}\PYG{p}{),}\PYG{l+s+s2}{\PYGZdq{}o\PYGZdq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}black\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

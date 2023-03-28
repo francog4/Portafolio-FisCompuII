@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{ddu}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{t}\PYG{p}{,}\PYG{n}{h}\PYG{p}{):}
+    \PYG{k}{return} \PYG{p}{(} \PYG{n}{u}\PYG{p}{(}\PYG{n}{t}\PYG{o}{+}\PYG{n}{h}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{u}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{+} \PYG{n}{u}\PYG{p}{(}\PYG{n}{t}\PYG{o}{\PYGZhy{}}\PYG{n}{h}\PYG{p}{))} \PYG{o}{/} \PYG{p}{(}\PYG{n}{h}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+
+\PYG{k}{for} \PYG{n}{beta} \PYG{o+ow}{in} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{):} \PYG{c+c1}{\PYGZsh{}con theta igual a 0}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{beta}\PYG{p}{,}\PYG{n}{ddu}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{h}\PYG{p}{),}\PYG{l+s+s2}{\PYGZdq{}o\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

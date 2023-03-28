@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{ddf}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+    \PYG{k}{return} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.25}\PYG{o}{*}\PYG{n}{x}\PYG{o}{**}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.5}\PYG{p}{)}
+
+\PYG{n}{y}\PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{np}\PYG{o}{.}\PYG{n}{pi}\PYG{o}{/}\PYG{l+m+mi}{3}\PYG{p}{]}
+\PYG{n}{h} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{geomspace}\PYG{p}{(}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{l+m+mf}{1e\PYGZhy{}20}\PYG{p}{,}\PYG{l+m+mi}{300}\PYG{p}{)}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{y}\PYG{p}{):}
+    \PYG{n}{err} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(} \PYG{n}{ddf}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{deriv2}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,}\PYG{n}{i}\PYG{p}{,}\PYG{n}{h}\PYG{p}{)} \PYG{p}{)}
+\end{Verbatim}

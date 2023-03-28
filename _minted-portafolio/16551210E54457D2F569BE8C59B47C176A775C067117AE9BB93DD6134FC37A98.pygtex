@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{c\PYGZus{}nt}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mf}{0.585}\PYG{p}{,} \PYG{l+m+mf}{0.682}\PYG{p}{,} \PYG{l+m+mf}{0.758}\PYG{p}{,} \PYG{l+m+mf}{0.820}\PYG{p}{,} \PYG{l+m+mf}{0.872}\PYG{p}{,} \PYG{l+m+mf}{0.917}\PYG{p}{,} \PYG{l+m+mf}{0.955}\PYG{p}{,} \PYG{l+m+mf}{0.989}\PYG{p}{,} \PYG{l+m+mf}{1.020}\PYG{p}{,} \PYG{l+m+mf}{1.047}\PYG{p}{]}
+
+\PYG{n}{a}\PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mf}{0.6}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{)}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{p}{):}            \PYG{c+c1}{\PYGZsh{}con los ceros no triviales}
+    \PYG{n}{beta}\PYG{o}{=} \PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{beta}\PYG{p}{,}\PYG{n}{ddu}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,} \PYG{n}{c\PYGZus{}nt}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{h}\PYG{p}{),} \PYG{l+s+s2}{\PYGZdq{}o\PYGZdq{}} \PYG{p}{)}
+\end{Verbatim}

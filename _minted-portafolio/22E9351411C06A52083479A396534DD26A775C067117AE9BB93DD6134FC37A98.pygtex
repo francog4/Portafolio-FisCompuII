@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{k+kn}{from} \PYG{n+nn}{mpl\PYGZus{}toolkits.mplot3d} \PYG{k+kn}{import} \PYG{n}{axes3d}
+
+\PYG{n}{fig}\PYG{o}{=}\PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{()}
+
+\PYG{n}{ax1} \PYG{o}{=} \PYG{n}{fig}\PYG{o}{.}\PYG{n}{add\PYGZus{}subplot}\PYG{p}{(}\PYG{l+m+mi}{111}\PYG{p}{,} \PYG{n}{projection}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}3d\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n}{xx}\PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{n}{u}\PYG{p}{[:,}\PYG{l+m+mi}{0}\PYG{p}{]])}
+\PYG{n}{yy}\PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{n}{u}\PYG{p}{[:,}\PYG{l+m+mi}{1}\PYG{p}{]])}
+\PYG{n}{zz}\PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{n}{u}\PYG{p}{[:,}\PYG{l+m+mi}{2}\PYG{p}{]])}
+
+\PYG{n}{ax1}\PYG{o}{.}\PYG{n}{plot\PYGZus{}wireframe}\PYG{p}{(}\PYG{n}{xx}\PYG{p}{,} \PYG{n}{yy}\PYG{p}{,} \PYG{n}{zz}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}green\PYGZdq{}}\PYG{p}{,} \PYG{n}{linewidth}\PYG{o}{=}\PYG{l+m+mf}{0.2}\PYG{p}{)}
+\end{Verbatim}

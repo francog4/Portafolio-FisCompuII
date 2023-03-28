@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{n}{m} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{51}\PYG{p}{):}
+    \PYG{n}{año2} \PYG{o}{=} \PYG{n}{año}\PYG{p}{[}\PYG{n}{m}\PYG{o}{*}\PYG{l+m+mi}{4}\PYG{p}{:}\PYG{l+m+mi}{5}\PYG{o}{+}\PYG{n}{m}\PYG{o}{*}\PYG{l+m+mi}{4}\PYG{p}{]}
+    \PYG{n}{manchas2} \PYG{o}{=} \PYG{n}{manchas}\PYG{p}{[}\PYG{n}{m}\PYG{o}{*}\PYG{l+m+mi}{4}\PYG{p}{:}\PYG{l+m+mi}{5}\PYG{o}{+}\PYG{n}{m}\PYG{o}{*}\PYG{l+m+mi}{4}\PYG{p}{]}
+
+    \PYG{n}{dim} \PYG{o}{=} \PYG{n}{año2}\PYG{o}{.}\PYG{n}{size}
+
+    \PYG{n}{vandermonde} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{ones}\PYG{p}{(} \PYG{p}{[}\PYG{n}{dim}\PYG{p}{,}\PYG{n}{dim}\PYG{p}{]} \PYG{p}{)}
+
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{dim}\PYG{p}{):}
+        \PYG{n}{vandermonde}\PYG{p}{[:,}\PYG{n}{i}\PYG{p}{]}\PYG{o}{=} \PYG{n}{año2}\PYG{o}{**}\PYG{n}{i}
+
+    \PYG{n}{a} \PYG{o}{=} \PYG{n}{Resolver}\PYG{p}{(}\PYG{n}{vandermonde}\PYG{p}{,} \PYG{n}{manchas2}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf}{p}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{a}\PYG{p}{):}
+        \PYG{n}{pol}\PYG{o}{=}\PYG{l+m+mf}{0.0}
+        \PYG{k}{for} \PYG{n}{n} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)):}
+            \PYG{n}{pol}\PYG{o}{=} \PYG{n}{pol} \PYG{o}{+} \PYG{n}{a}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]} \PYG{o}{*} \PYG{n}{x}\PYG{o}{**}\PYG{n}{n}
+        \PYG{k}{return} \PYG{n}{pol}
+\end{Verbatim}

@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{xa}\PYG{o}{=} \PYG{p}{[]}
+\PYG{n}{ya}\PYG{o}{=} \PYG{p}{[]}
+\PYG{k}{for} \PYG{n}{n} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{xx}\PYG{p}{)):}
+    \PYG{n}{r} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{xx}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{yy}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+
+    \PYG{k}{if} \PYG{n}{r}\PYG{o}{\PYGZlt{}}\PYG{l+m+mf}{0.5}\PYG{p}{:}
+        \PYG{n}{xa}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{xx}\PYG{p}{[}\PYG{n}{n}\PYG{p}{])}
+        \PYG{n}{ya}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{yy}\PYG{p}{[}\PYG{n}{n}\PYG{p}{])}
+\end{Verbatim}
